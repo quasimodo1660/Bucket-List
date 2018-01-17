@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C491F0E1200ECB67006F2914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491F0E0200ECB67006F2914 /* AppDelegate.swift */; };
-		C491F0E3200ECB67006F2914 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491F0E2200ECB67006F2914 /* ViewController.swift */; };
+		C491F0E3200ECB67006F2914 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491F0E2200ECB67006F2914 /* AddItemViewController.swift */; };
 		C491F0E6200ECB67006F2914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C491F0E4200ECB67006F2914 /* Main.storyboard */; };
 		C491F0E8200ECB67006F2914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C491F0E7200ECB67006F2914 /* Assets.xcassets */; };
 		C491F0EB200ECB67006F2914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C491F0E9200ECB67006F2914 /* LaunchScreen.storyboard */; };
 		C491F0F6200ECB67006F2914 /* Bucket_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491F0F5200ECB67006F2914 /* Bucket_ListTests.swift */; };
 		C491F101200ECB67006F2914 /* Bucket_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491F100200ECB67006F2914 /* Bucket_ListUITests.swift */; };
+		C491F10F200ECE7A006F2914 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491F10E200ECE7A006F2914 /* MainTableView.swift */; };
+		C491F111200ECEE7006F2914 /* AddItemViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491F110200ECEE7006F2914 /* AddItemViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		C491F0DD200ECB67006F2914 /* Bucket List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bucket List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C491F0E0200ECB67006F2914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C491F0E2200ECB67006F2914 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C491F0E2200ECB67006F2914 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		C491F0E5200ECB67006F2914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C491F0E7200ECB67006F2914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C491F0EA200ECB67006F2914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		C491F0FC200ECB67006F2914 /* Bucket ListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bucket ListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C491F100200ECB67006F2914 /* Bucket_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket_ListUITests.swift; sourceTree = "<group>"; };
 		C491F102200ECB67006F2914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C491F10E200ECE7A006F2914 /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
+		C491F110200ECEE7006F2914 /* AddItemViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				C491F0E0200ECB67006F2914 /* AppDelegate.swift */,
-				C491F0E2200ECB67006F2914 /* ViewController.swift */,
+				C491F0E2200ECB67006F2914 /* AddItemViewController.swift */,
 				C491F0E4200ECB67006F2914 /* Main.storyboard */,
+				C491F110200ECEE7006F2914 /* AddItemViewDelegate.swift */,
+				C491F10E200ECE7A006F2914 /* MainTableView.swift */,
 				C491F0E7200ECB67006F2914 /* Assets.xcassets */,
 				C491F0E9200ECB67006F2914 /* LaunchScreen.storyboard */,
 				C491F0EC200ECB67006F2914 /* Info.plist */,
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C491F0E3200ECB67006F2914 /* ViewController.swift in Sources */,
+				C491F10F200ECE7A006F2914 /* MainTableView.swift in Sources */,
+				C491F0E3200ECB67006F2914 /* AddItemViewController.swift in Sources */,
+				C491F111200ECEE7006F2914 /* AddItemViewDelegate.swift in Sources */,
 				C491F0E1200ECB67006F2914 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,7 +438,7 @@
 				DEVELOPMENT_TEAM = UZDLCQ3DP9;
 				INFOPLIST_FILE = "Bucket List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "PotatoBrother.Bucket-List";
+				PRODUCT_BUNDLE_IDENTIFIER = PotatoBrother.Cold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,7 +453,7 @@
 				DEVELOPMENT_TEAM = UZDLCQ3DP9;
 				INFOPLIST_FILE = "Bucket List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "PotatoBrother.Bucket-List";
+				PRODUCT_BUNDLE_IDENTIFIER = PotatoBrother.Cold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
