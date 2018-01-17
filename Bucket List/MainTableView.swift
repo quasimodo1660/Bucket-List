@@ -7,22 +7,34 @@
 //
 
 import UIKit
+import CoreData
 
 class MainTableView: UITableViewController,AddItemViewControllerDelegate {
     
-    var list:[String] = ["liam","Emily"]
+    var items = [BucketListItem]()
+    
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet var maintable: UITableView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        fetchAllItems()
     }
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         performSegue(withIdentifier: "Edit", sender: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        list.remove(at: indexPath.row)
+        let item = items[indexPath.row]
+        managedObjectContext.delete(item)
+        do{
+            try managedObjectContext.save()
+        }
+        catch{
+            print("\(error)")
+        }
+        items.remove(at: indexPath.row)
         tableView.reloadData()
     }
     
@@ -31,7 +43,7 @@ class MainTableView: UITableViewController,AddItemViewControllerDelegate {
         let controller = navigationController.topViewController as! AddItemViewController
         controller.delegate = self
         if let indexPath = (sender as? NSIndexPath){
-            controller.item =  list[indexPath.row]
+            controller.item =  items[indexPath.row].text
             controller.indexPath = indexPath
         }
         
@@ -51,13 +63,13 @@ class MainTableView: UITableViewController,AddItemViewControllerDelegate {
 //        }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Get the UITableViewCell and create/populate it with data then return it
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = items[indexPath.row].text!
         return cell
     }
     func addItemViewController(_ controller: AddItemViewController, didPressCancelButton button: UIBarButtonItem) {
@@ -65,14 +77,34 @@ class MainTableView: UITableViewController,AddItemViewControllerDelegate {
     }
     
     
-    func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: String, at indexPath:NSIndexPath?) {
+    func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem text: String, at indexPath:NSIndexPath?) {
         if let ip = indexPath{
-            list[ip.row]=item
+            let item = items[ip.row]
+            item.text = text
         }
         else{
-            list.append(item)
+            let item = NSEntityDescription.insertNewObject(forEntityName: "BucketListItem", into: managedObjectContext) as! BucketListItem
+            item.text = text
+            items.append(item)
+        }
+        
+        do{
+            try managedObjectContext.save()
+        }
+        catch{
+            print("\(error)")
         }
         dismiss(animated: true, completion: nil)
         tableView.reloadData()
+    }
+    func fetchAllItems(){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "BucketListItem")
+        do{
+            let result = try managedObjectContext.fetch(request)
+            items = result as! [BucketListItem]
+        }
+        catch{
+            print("\(error)")
+        }
     }
 }

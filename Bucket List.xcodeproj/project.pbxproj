@@ -16,6 +16,7 @@
 		C491F101200ECB67006F2914 /* Bucket_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491F100200ECB67006F2914 /* Bucket_ListUITests.swift */; };
 		C491F10F200ECE7A006F2914 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491F10E200ECE7A006F2914 /* MainTableView.swift */; };
 		C491F111200ECEE7006F2914 /* AddItemViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491F110200ECEE7006F2914 /* AddItemViewDelegate.swift */; };
+		C4EFA99E200FD6640094140C /* BucketList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4EFA99C200FD6640094140C /* BucketList.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C491F102200ECB67006F2914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C491F10E200ECE7A006F2914 /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		C491F110200ECEE7006F2914 /* AddItemViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewDelegate.swift; sourceTree = "<group>"; };
+		C4EFA99D200FD6640094140C /* BucketList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucketList.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C491F0E0200ECB67006F2914 /* AppDelegate.swift */,
+				C4EFA99C200FD6640094140C /* BucketList.xcdatamodeld */,
 				C491F0E2200ECB67006F2914 /* AddItemViewController.swift */,
 				C491F0E4200ECB67006F2914 /* Main.storyboard */,
 				C491F110200ECEE7006F2914 /* AddItemViewDelegate.swift */,
@@ -267,6 +270,7 @@
 			files = (
 				C491F10F200ECE7A006F2914 /* MainTableView.swift in Sources */,
 				C491F0E3200ECB67006F2914 /* AddItemViewController.swift in Sources */,
+				C4EFA99E200FD6640094140C /* BucketList.xcdatamodeld in Sources */,
 				C491F111200ECEE7006F2914 /* AddItemViewDelegate.swift in Sources */,
 				C491F0E1200ECB67006F2914 /* AppDelegate.swift in Sources */,
 			);
@@ -566,6 +570,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C4EFA99C200FD6640094140C /* BucketList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C4EFA99D200FD6640094140C /* BucketList.xcdatamodel */,
+			);
+			currentVersion = C4EFA99D200FD6640094140C /* BucketList.xcdatamodel */;
+			path = BucketList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C491F0D5200ECB67006F2914 /* Project object */;
 }
